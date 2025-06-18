@@ -10,18 +10,18 @@ import java.util.*
 
 class RandomColorActivity : AppCompatActivity() {
 
-    private val rootView: View get() = findViewById(android.R.id.content)
+    private lateinit var rootView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_color)
+        rootView = findViewById(android.R.id.content)
 
         rootView.setOnClickListener { it.setBackgroundColor(getRandomColor()) }
     }
 
     private fun getRandomColor(): Int {
         // Get random color// Get random color// Get random color// Get random color
-        getRandomColor()
 
         val rnd = Random()
         return Color.argb(
